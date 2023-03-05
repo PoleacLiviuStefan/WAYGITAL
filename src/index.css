@@ -19,6 +19,9 @@
   .font-outline-4 {
     -webkit-text-stroke: 4px white;
   }
+  .ancora {
+    overflow-anchor: auto;
+  }
   .background-animate {
     background-size: 400%;
 

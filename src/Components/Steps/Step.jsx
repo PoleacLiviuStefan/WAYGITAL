@@ -2,7 +2,7 @@ import React from 'react'
 
 const Step = ({iconImg,stepNumber,stepTitle}) => {
   return (
-    <div className='flex flex-col items-center items-center h-[360px]  '>
+    <div className='flex flex-col items-center items-center h-[360px]  cursor-pointer'>
         <div className='flex justify-center items-center w-[220px] h-[220px] bg-white shadow-xl rounded-[50%]' >
             <img src={iconImg} className="w-[130px] animate-[expandReverse_.5s_ease-in-out_forwards] hover:animate-[expand_.5s_ease-in-out_forwards]" />
             </div>

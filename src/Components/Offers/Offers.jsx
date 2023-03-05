@@ -35,7 +35,7 @@ const Offers = () => {
                     <h3 className='text-[34px] font-bold'>{totalPrice} RON</h3>
                     <ul className='relative  flex flex-col items-left w-[90%] oveflow-hidden'>
                       {selectedm.map((obiect)=>{
-                        return <li className='flex mt-4 text-[18px] font-bold'><span className='mt-1 text-green-400 text-[24px] mr-2'><BsFillPatchCheckFill /></span>
+                        return <li className='flex mt-2 lg:mt-4 text-[15px] lg:text-[18px] font-bold'><span className='lg:mt-1 text-green-400 text-[24px] mr-2'><BsFillPatchCheckFill /></span>
                         {
                           obiect===0 ?
                             "Design complet"
@@ -49,7 +49,8 @@ const Offers = () => {
                     </ul>
                     </div>
                 </div>
-                <div className='relative  flex flex-col lg:flex-row items-center lg:justify-center  h-[43rem]  lg:h-[40rem] mt-[2rem] lg:mt-0  w-full lg:w-[54rem]  overflow-y-scroll lg:overflow-hidden '>
+                <div className='relative  flex flex-col lg:flex-row items-center lg:justify-center  h-[43rem]  lg:h-[40rem] mt-[2rem] lg:mt-0  w-full lg:w-[54rem]  overflow-y-scroll overflow-x-hidden lg:overflow-hidden '>
+                 
                      <span onClick={()=>setOptionSection(0)} className='absolute hidden lg:inline z-20  left-[-2rem] rotate-[180deg]   text-[128px] cursor-pointer' ><HiChevronRight /></span>
                     <span onClick={()=>setOptionSection(1)} className='absolute hidden lg:inline z-20   right-[-2rem] text-[128px] cursor-pointer' ><HiChevronRight /></span>
                   

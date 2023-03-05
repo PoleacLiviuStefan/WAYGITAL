@@ -111,13 +111,10 @@ module.exports = {
       },
       logoLoadingAnim:{
         '0%':{
-          scale:".9"
+          scale:"1.2"
           
         },
-        "50%":{
-          scale:"1.1"
-        }
-        ,
+      
         '100%':{
           scale:"1"
          
@@ -143,6 +140,22 @@ module.exports = {
         '100%':{
           width:"100%"
          
+        }
+      },
+      unselectedBtn:{
+        '0%':{
+          color:"black"
+        },
+        '100%':{
+          color:"#D1D5DB"
+        }
+      },
+      unselectedBtnReverse:{
+        '0%':{
+          color:"#D1D5DB"
+        },
+        '100%':{
+          color:"black"
         }
       },
     }

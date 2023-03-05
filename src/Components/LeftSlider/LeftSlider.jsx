@@ -2,8 +2,8 @@ import React from 'react'
 
 const LeftSlider = ({firstColored,secondColored}) => {
   return (
-    <div className='fixed z-40 text-white left-[1rem] lg:left-[2rem] w-[10rem] text-[14px] h-full flex flex-col justify-center '>
-        <div className='relative  flex flex-col justify-center h-[40rem] w-full'>
+    <div className='fixed z-40 text-white left-[1rem] lg:left-[2rem] w-[2px] text-[14px] h-full flex flex-col justify-center '>
+        <div className='relative  flex flex-col justify-center h-[40rem] w-[2px]'>
                  
                 <div className={`flex flex-col h-[120px] w-[1px]    ${secondColored==="black" ?"bg-black": "bg-white" } `} >
                     <span></span>
