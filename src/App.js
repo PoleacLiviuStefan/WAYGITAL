@@ -12,7 +12,7 @@ import Steps from "./Components/Steps/Steps";
 import WhyUs from "./Components/WhyUs/WhyUs";
 import { useState,useEffect } from "react";
 import WelcomeLoading from "./Components/Loading/WelcomeLoading";
-
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   const [scrollValue, setScrollValue] = useState(0);
@@ -54,15 +54,23 @@ function App() {
         :
         <><Navbar showNavbar={scrollValue>20 } /> 
         <LeftSlider firstColored={sliderFirstColor} secondColored={sliderSecondColor} />
-        <Hero />
-        <WhyUs  />
-        <Services />
-        <Portofoliu />
-        <MiniInfo />
-        <Offers />
-        <Faq />     
-        <Steps />
-        <Contact />
+        
+          <Routes>
+            <Route path="/" element={<>
+              <main>
+                <Hero />
+                <WhyUs  />
+                <Services />
+                <MiniInfo />
+                <Offers />
+                <Portofoliu />
+                <Faq />     
+                <Steps />
+                <Contact startAnimate={scrollValue>5916} />
+              </main>
+          </>} />
+          </Routes>
+        
         <Footer />
         </>
 }

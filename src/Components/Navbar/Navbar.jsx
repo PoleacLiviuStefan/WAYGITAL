@@ -76,7 +76,7 @@ const Navbar = ({showNavbar}) => {
              <div className='flex'>
                 <div className='flex flex-col items-center'>
                     <h3>Ne poti suna la </h3>
-                    <a className='text-[#6C35FF] font-semibold text-[20px] ' >0753616640</a>
+                    <a href="tel:+40-753-616-640" className='text-[#6C35FF] font-semibold text-[20px] ' >0753616640</a>
                 </div>
                 <button className=' flex  bg-clip-padding bg-gradient-to-r from-[#6B34FF] to-[#B234FF] border-[3px] w-[10rem] h-[3.5rem] rounded-[21px] ml-[3rem] justify-center items-center font-semibold text-white '>CONTACT</button>
              </div>

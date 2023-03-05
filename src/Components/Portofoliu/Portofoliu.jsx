@@ -17,7 +17,7 @@ const Portofoliu = () => {
   return (
     <div name="Portofoliu" className='relative flex justify-center items-center w-full h-[25rem] lg:h-[55rem] bg-[#1A1A1A]'>
         <div className='flex flex-col items-center w-[80%] lg:w-[90%]'>
-        <h2 className='absolute top-0 text-[26px] lg:text-[56px]  font-extrabold font-outline-2    text-transparent'>PORTOFOLIU</h2>
+        <h2 className='absolute top-[2rem] text-[26px] lg:text-[56px]  font-extrabold font-outline-2    text-transparent'>PORTOFOLIU</h2>
         <div className='relative  w-[350px] lg:w-[900px]'>
             <a target="_blank" href={sitesLink[siteIndex]}><img   src={desktopImg[siteIndex]} className="lg:left-0 left-[1rem] w-[280px] lg:w-[650px] xl:w-[700px] 2xl:w-[800px] cursor-pointer" /></a>
             <a target="_blank" href={sitesLink[siteIndex]}> <img src={phoneImg[siteIndex]} className="absolute right-[1.5rem] lg:right-[11rem] xl:right-[7rem] 2xl:right-0 top-[1rem] lg:top-[5rem] w-[60px] lg:w-[115px] xl:w-[130px] 2xl:w-[150px] cursor-pointer" /></a>
