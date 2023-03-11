@@ -11,10 +11,11 @@ import Services from "./Components/Services/Services";
 import Steps from "./Components/Steps/Steps";
 import WhyUs from "./Components/WhyUs/WhyUs";
 import { useState,useEffect,useRef } from "react";
-
+import { motion, useScroll,useTransform } from "framer-motion"
 import WelcomeLoading from "./Components/Loading/WelcomeLoading";
 
 import { Route, Routes } from "react-router-dom"
+import { useLocation } from 'react-router-dom'
 import PoliticaDeConfidentialitate from "./Components/Conditions/PoliticaDeConfidentialitate";
 import PoliticaCookie from "./Components/Conditions/PoliticaCookie";
 import TermeniSiConditii from "./Components/Conditions/TermeniSiConditii";
@@ -26,29 +27,21 @@ function App() {
   const [showLoadingScreen,setShowLoadingScreen]=useState(true)
   const windowHeight = useRef(window.innerHeight);
   let maxY = window.scrollMaxY;
+  const { scrollYProgress } = useScroll();
   const [scrollPercentage,setScrollPercentage]=useState(0)
+  const location = useLocation();
 
   useEffect(() => {
-
+    console.log(scrollYProgress.current)
     const onScroll = (e) => {
       setScrollValue(e.target.documentElement.scrollTop);
-      let supportPageOffset = window.pageXOffset !== undefined;
-      let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-      let scroll = {
-         x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
-         y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
-      };
 
-       setScrollPercentage ((scroll.y / (document.documentElement.offsetHeight - window.innerHeight)) * 100);
-      console.log(scrollPercentage)
-
-      if(scrollValue>=2612 && scrollValue<=3480 || scrollValue>=4461 && scrollValue<=5476  )
-          setSliderSecondColor("black")
+      
+     
+      if(scrollYProgress.current>=0.33 && scrollYProgress.current<=0.43 ||  scrollYProgress.current>=0.73 && scrollYProgress.current<=0.87)
+      setSliderFirstColor("black")
         else
-          setSliderSecondColor("white")
-      if(scrollValue>=2894 && scrollValue<=3752 || scrollValue>=4720 && scrollValue<=5750   )
-          setSliderFirstColor("black")
-        else
+          
           setSliderFirstColor("white")
     };
 
@@ -64,13 +57,13 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#1A1A1A]">
+    <div className={` ${showLoadingScreen && "w-screen h-screen "} ${ (scrollYProgress.current>=0.30 && scrollYProgress.current<=0.45 ||  scrollYProgress.current>=0.57 && scrollYProgress.current<=0.75 ) ? "animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}  ${ (scrollYProgress.current>=0.33 && scrollYProgress.current<=0.43 ||  scrollYProgress.current>=0.73 && scrollYProgress.current<=0.87 ) ? "lg:animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"lg:animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}`}>
        {
        showLoadingScreen
        ? <WelcomeLoading />
         :
         <><Navbar sliderPercentage={scrollPercentage} showNavbar={scrollValue>20 } /> 
-        <LeftSlider firstColored={sliderFirstColor} secondColored={sliderSecondColor} />
+        <LeftSlider firstColored={(location.pathname!="/politica-de-confidentialitate" && location.pathname!="/termeni-si-conditii" && location.pathname!="/politica-cookie" ) ? sliderFirstColor : "black"} secondColored={(location.pathname!="/politica-de-confidentialitate" && location.pathname!="/termeni-si-conditii" && location.pathname!="/politica-cookie" ) ? sliderSecondColor : "black"} />
         
           <Routes>
             <Route path="/" element={<>

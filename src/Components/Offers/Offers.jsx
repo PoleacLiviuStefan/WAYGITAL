@@ -23,16 +23,16 @@ const Offers = () => {
   const [totalPrice,setTotalPrice]=useState(0)
   const [optionSections,setOptionSection]=useState(0)
   return (
-    <div className='relative flex justify-center w-full h-[84rem] lg:h-[50rem] bg-[#F2F2F7] '>
-            <div className='relative items-center  flex lg:flex-row flex-col justify-center lg:justify-between w-[80%] lg:w-[75rem]'>
+    <div className='relative flex justify-center w-full h-full pt-[10rem] lg:py-[15rem]  '>
+            <div className='relative  items-center  flex lg:flex-row flex-col justify-center lg:justify-between w-[80%] lg:w-[75rem]'>
             
                 <div className='relative w-[300px]  lg:w-[350px] h-[368px] lg:h-[430px] rounded-[16px] bg-white shadow-xl  '>
                     
                 <div className='absolute top-[-3.5rem] right-[-1.5rem] flex justify-center items-center   w-[180px] h-[85px] bg-[#CFD3F0] rounded-[12px]'>
                     <h3 className='font-extrabold mt-[-1rem] text-[#4E568F]'>OFERTA LIMITATA</h3> </div>
                    <div className='bg-white flex flex-col items-center absolute  top-0 left-0 w-full h-full ' >
-                    <h3 className='font-extrabold text-black text-[28px] py-[1.5rem]'> Pret <span className='font-outline-black-1 text-transparent'>Estimat</span></h3>
-                    <h3 className='text-[34px] font-bold'>{totalPrice} RON</h3>
+                    <h3 className='font-extrabold text-black text-[22px] lg:text-[28px] py-[.5rem] lg:py-[1.5rem]'> Pret <span className='font-outline-black-1 text-transparent'>Estimat</span></h3>
+                    <h3 className='top-2 text-[26px] lg:text-[34px] font-bold'>{totalPrice} RON</h3>
                     <ul className='relative  flex flex-col items-left w-[90%] oveflow-hidden'>
                       {selectedm.map((obiect)=>{
                         return <li className='flex mt-2 lg:mt-4 text-[15px] lg:text-[18px] font-bold'><span className='lg:mt-1 text-green-400 text-[24px] mr-2'><BsFillPatchCheckFill /></span>
@@ -122,12 +122,15 @@ const Offers = () => {
                         {    setSelected(selectedm.filter(optiune=> optiune!==5))
                              setTotalPrice(prev=>prev-=300)
                         }
-                    } } className="w-[220px] h-[215px] lg:h-[306px] my-6">
+                    } } className="w-[220px] h-[215px] z-30 lg:h-[306px] my-6">
                        <OfferCard title="Mesaje directe de pe site" iconImg={selectedm.includes(5)? messageIconSelected:messageIcon}  />
                        </div>
                     </div>
                     
                 </div>
+                <div className='h-[15rem] lg:hidden w-full '>
+                <div className='absolute lg:hidden bottom-[15rem] z-20   bg-gradient-to-t from-[#F2F2F7] to-transparent bg-opacity-[50%] h-[10rem] w-full   ' />
+        </div> 
             </div>
     </div>
   )

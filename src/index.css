@@ -29,14 +29,36 @@
     -moz-animation: AnimationName 9s ease infinite;
     animation: AnimationName 9s ease infinite;
   }
+  .contactBtn-animate{
+    background-size: 400%;
 
+    -webkit-animation: ContactBtn .5s ease linear forwards;
+    -moz-animation: ContactBtn .5s ease linear forwards;
+    animation: ContactBtn .5s ease linear forwards;
+  }
   @keyframes AnimationName {
     0%,
     100% {
-      background-position: 0% 20%;
+      background-position: 40% 50%;
+    }
+    25%{
+      background-position: 10% 90%;
     }
     50% {
-      background-position: 100% 80%;
+      background-position: 60% 100%;
+    }
+    75%{
+      background-position: 20% 80%;
+    }
+  }
+  @keyframes ContactBtn{
+    0%{
+      background: rgb(107,52,255);
+      background: linear-gradient(90deg, rgba(107,52,255,1) 0%, rgba(178,52,255,1) 100%);
+    }
+    100%{
+      background: rgb(107,52,255);
+      background: linear-gradient(90deg, rgba(107,52,255,1) 0%, rgba(178,52,255,1) 17%);
     }
   }
 } 

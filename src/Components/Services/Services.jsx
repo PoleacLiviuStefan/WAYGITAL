@@ -5,8 +5,8 @@ import translateIcon from './googleTranslateLogo.svg'
 import responsiveIcon from './responsiveIcon.svg'
 const Services = () => {
   return (
-    <div name="Servicii" className='flex flex-col bg-[#1A1A1A] items-center text-white  w-screen h-[70rem] lg:h-[65rem] '>
-        <h2 className='text-[26px] lg:text-[56px]  font-extrabold font-outline-2    '>SERVICIILE <span className='text-transparent' > NOASTRE</span></h2>
+    <div name="Servicii" className='flex flex-col bg-transparent items-center text-white  w-screen h-[70rem] lg:h-[65rem] '>
+        <h2 className='text-[24px] lg:text-[56px]  font-extrabold font-outline-2    '>SERVICIILE <span className='text-transparent' > NOASTRE</span></h2>
         <div className='relative  lg:top-[8rem] flex flex-col items-left w-[55rem] '>
           <h3 className='text-[32px] leading-[35px] font-bold'>Creare Site <img className='w-[170px] mt-[-.5rem] ' src={lineCreare} /> de Prezentare</h3>
           <div className='flex lg:flex-row flex-col items-center   mt-[2rem]'>
