@@ -45,9 +45,9 @@ const Contact = ({startAnimate}) => {
                     <span className='font-bold'>Lasa-ne sa iti transformam ideea in realitate</span></p>
                     <div className='flex flex-col lg:items-center '>
                         <div className='flex lg:justify-center text-black text-[52px] mt-[4rem] lg:mt-[9rem] w-[25rem]'> 
-                            <a target="_blank" href="https://www.instagram.com/waygital/" className='flex justify-center items-center w-[70px] h-[70px] rounded-[16px] bg-white shadow-lg cursor-pointer'><AiOutlineInstagram /> </a>
-                            <div className='flex justify-center items-center w-[70px] h-[70px] mx-6 rounded-[16px] bg-white shadow-lg cursor-pointer'><CiFacebook /></div>
-                            <a target="_blank" href="https://twitter.com/WayGital" className='flex justify-center items-center w-[70px] h-[70px]  rounded-[16px] bg-white shadow-lg cursor-pointer'><CiTwitter /></a>
+                            <a target="_blank" href="https://www.instagram.com/waygital/" className='flex justify-center items-center w-[70px] h-[70px] rounded-[16px] bg-white shadow-lg cursor-pointer animate-[hoverSocialIconReverse_.5s_ease-in-out_forwards] hover:animate-[hoverSocialIcon_.5s_ease-in-out_forwards]'><AiOutlineInstagram /> </a>
+                            <div className='flex justify-center items-center w-[70px] h-[70px] mx-6 rounded-[16px] bg-white shadow-lg cursor-pointer animate-[hoverSocialIconReverse_.5s_ease-in-out_forwards] hover:animate-[hoverSocialIcon_.5s_ease-in-out_forwards]'><CiFacebook /></div>
+                            <a target="_blank" href="https://twitter.com/WayGital" className='flex justify-center items-center w-[70px] h-[70px]  rounded-[16px] bg-white shadow-lg cursor-pointer animate-[hoverSocialIconReverse_.5s_ease-in-out_forwards] hover:animate-[hoverSocialIcon_.5s_ease-in-out_forwards]'><CiTwitter /></a>
                         </div>
                         <div className='mt-[1.5rem] text-white'>
                             <h3>Email : info@waygital.com</h3>

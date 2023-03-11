@@ -7,9 +7,9 @@ const Services = () => {
   return (
     <div name="Servicii" className='flex flex-col bg-transparent items-center text-white  w-screen h-[70rem] lg:h-[65rem] '>
         <h2 className='text-[24px] lg:text-[56px]  font-extrabold font-outline-2    '>SERVICIILE <span className='text-transparent' > NOASTRE</span></h2>
-        <div className='relative  lg:top-[8rem] flex flex-col items-left w-[55rem] '>
-          <h3 className='text-[32px] leading-[35px] font-bold'>Creare Site <img className='w-[170px] mt-[-.5rem] ' src={lineCreare} /> de Prezentare</h3>
-          <div className='flex lg:flex-row flex-col items-center   mt-[2rem]'>
+        <div className='relative  lg:top-[8rem] flex flex-col lg:items-start items-center w-[55rem] '>
+          <h3 className='text-[22px] lg:text-[32px] leading-[35px] font-bold mt-[2rem] ml-[-9rem] lg:ml-0 lg:mt-0'>Creare Site <img className=' w-[120px] lg:w-[170px] mt-[-.5rem] ' src={lineCreare} /> de Prezentare</h3>
+          <div className='flex lg:flex-row flex-col items-center  mt-[.5rem] lg:mt-[2rem]'>
             <div className='flex-col'>
            
               <div className='flex flex-col items-center justify-center  w-[300px] lg:w-[400px] h-[170px] lg:h-[200px] rounded-[8px]  bg-white bg-opacity-[4%] shadow-[0px_0px_15px_14px_rgba(0,0,0,0.30)] ' >

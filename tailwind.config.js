@@ -258,6 +258,22 @@ module.exports = {
           color:"8d63ff"
         }
       },
+      hoverSocialIcon:{
+        '0%':{
+          marginTop:"0"
+        },
+        '100%':{
+          marginTop:"-.5rem"
+        }
+      },
+      hoverSocialIconReverse:{
+        '0%':{
+          marginTop:"-.5rem"
+        },
+        '100%':{
+          marginTop:"0"
+        }
+      },
     }
   },
   plugins: [],
