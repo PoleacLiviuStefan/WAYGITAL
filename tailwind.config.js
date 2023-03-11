@@ -4,23 +4,59 @@ module.exports = {
   ],
   theme: {
     extend: {
-   
+      backgroundImage:{
+        'underLine': "url('/public/Images/underLine.svg')",
+        'sol':"url('/public/Images/SOL.svg')",
+        'sal':"url('/public/Images/SAL.svg')",
+      }
     },
     keyframes:{
-      showAnswer:{
+      appear:{
         '0%':{
-          height:"4.5rem"
+          opacity:"100%"
         },
         '100%':{
-          height:"10rem"
+          opacity:"0"
+        }
+      },
+      disappear:{
+        '0%':{
+          opacity:"0"
+        },
+        '100%':{
+          opacity:"100%"
+        }
+      },
+      showAnswer:{
+        '0%':{
+          height:"4rem"
+        },
+        '100%':{
+          height:"14rem"
         }
       },
       showAnswerReverse:{
         '0%':{
-          height:"10rem"
+          height:"14rem"
         },
         '100%':{
           height:"4.5rem"
+        }
+      },
+      showAnswerMobile:{
+        '0%':{
+          height:"3.5rem"
+        },
+        '100%':{
+          height:"14rem"
+        }
+      },
+      showAnswerMobileReverse:{
+        '0%':{
+          height:"14rem"
+        },
+        '100%':{
+          height:"3.5rem"
         }
       },
       rotateArrow:{
@@ -156,6 +192,70 @@ module.exports = {
         },
         '100%':{
           color:"black"
+        }
+      },
+      expandMenu:{
+        '0%':{
+          height:"0rem",
+        },
+        '100%':{
+          height:"15rem"
+        }
+      },
+      expandMenuReverse:{
+        '0%':{
+          height:"15rem"
+        },
+        '100%':{
+          height:"0rem"
+        }
+      },
+      animateLastTwo:{
+        '0%':{
+          marginTop:"-5rem"
+        },
+        '100%':{
+          marginTop:"-1rem"
+        }
+      },
+      animateFirstTow:{
+        '0%':{
+          marginBottom:"-5rem"
+        },
+        '100%':{
+          marginBottom:"-1rem"
+        }
+      },
+      animateBackgroundWhite:{
+        '0%':{
+          backgroundColor:"#1A1A1A"
+        },
+        '100%':{
+          backgroundColor:"#F2F2F7"
+        }
+      },
+      animateBackgroundBlack:{
+        '0%':{
+          backgroundColor:"#F2F2F7"
+        },
+        '100%':{
+          backgroundColor:"#1A1A1A"
+        }
+      },
+      contactBtn:{
+        '0%':{
+          backgroundColor:"linear-gradient(90deg, rgba(107,52,255,1) 0%, rgba(178,52,255,1) 100%)"
+        },
+        '100%':{
+          backgroundColor:"linear-gradient(90deg, rgba(107,52,255,1) 0%, rgba(178,52,255,1) 17%)"
+        }
+      },
+      phoneAnim:{
+        '0%':{
+          color:"#6C35FF"
+        },
+        '100%':{
+          color:"8d63ff"
         }
       },
     }
