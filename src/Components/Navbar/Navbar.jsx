@@ -93,9 +93,9 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 
              </div>
              <div onClick={()=>setShowMobileMenu(prev=>!prev)} className='absolute lg:hidden top-[.2rem] left-[1.5rem]  flex flex-col items-left justify-center h-[2rem]  w-[1.5rem]'>
-              <span className='relative top-[.3rem] w-[1.3rem] h-[2px] bg-black' />
-              <span className='relative top-[.6rem] w-[1rem] h-[2px] bg-black' />
-              <span className='relative top-[.9rem] w-[1.3rem] h-[2px] bg-black' />
+              <span className={`relative ${showMobileMenu ? " animate-[topLine_.5s_ease-in-out_forwards]" :" animate-[topLineReverse_.5s_ease-in-out_forwards]"} top-[.3rem] w-[1.3rem] h-[2px] bg-black`} />
+              <span className={`relative ${showMobileMenu ? " animate-[disappear_.5s_ease-in-out_forwards]" :" animate-[appear_.5s_ease-in-out_forwards]"}  top-[.6rem] w-[1rem] h-[2px] bg-black`} />
+              <span className={`relative ${showMobileMenu ? " animate-[bottomLine_.5s_ease-in-out_forwards]" :"animate-[bottomLineReverse_.5s_ease-in-out_forwards]"} top-[.9rem] w-[1.3rem] h-[2px] bg-black`} />
              </div>
         
              <div  className='w-full h-full lg:hidden flex justify-center items-center'>
@@ -124,11 +124,11 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             offset={50}
             duration={500}
             href="Contact"
-          ><button className=' flex    bg-gradient-to-r from-[#6B34FF] to-[#B234FF]  border-[3px] w-[7rem] lg:w-[10rem] h-[3rem] lg:h-[3.5rem] rounded-[21px] left-[.5rem] lg:left-[3rem] justify-center items-center font-semibold text-white text-[14px] lg:text-[15px]'>CONTACT</button>
+          ><button className=' flex    bg-gradient-to-r from-[#6B34FF] to-[#B234FF]  w-[7rem] lg:w-[8rem] h-[3rem] lg:h-[3rem] rounded-[21px] left-[.5rem] lg:left-[3rem] justify-center items-center font-semibold text-white text-[14px] lg:text-[15px] animate-[reverseHoverContactBtn_.3s_ease-in-out_forwards] hover:animate-[hoverContactBtn_.3s_ease-in-out_forwards]'>CONTACT</button>
           </Link>
              </div>
         </div>
-        <motion.div  style={{ scaleX: scrollYProgress }} className={`absolute left-0 bottom-0 origin-left w-full  bg-gradient-to-r from-purple-400 to-purple-600 h-[.7rem]  `} />
+        <motion.div  style={{ scaleX: scrollYProgress }} className={`absolute left-0 bottom-0 origin-left w-full  bg-gradient-to-r from-purple-400 to-purple-600 h-[.4rem] lg:h-[.7rem]  `} />
 
         <div className={`absolute lg:hidden  flex flex-col items-center justify-center  overflow-hidden  top-[4rem] w-full ${showMobileMenu ? "animate-[expandMenu_.3s_ease-in-out_forwards]" : "animate-[expandMenuReverse_.3s_ease-in-out_forwards]"} bg-white`}>
           <div className='flex flex-col items-left py-6 text-[12px] font-bold justify-between h-full w-[17rem] overflow-hidden '>
@@ -203,7 +203,7 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 duration={500}
                 href="Contact"
               >
-                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==5 && hoveredBtn!=-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==5 && hoveredBtn!=-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] hover:"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
                 </Link>
                 <a href='tel:+40-753-616-640' className='flex px-2 text-[14px]'><span className='text-[15px] mr-2'><BsPhone /></span>Telefon : <span className='hover:animate-[phoneAnim_.3s_ease-in-out_forwards]'>0753616640</span></a>
                 <a className='flex px-2 '><span className='text-[15px] mr-2'><AiOutlineMail /></span>E-mail: info@waygital.ro</a>

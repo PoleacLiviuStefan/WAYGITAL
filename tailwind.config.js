@@ -11,7 +11,7 @@ module.exports = {
       }
     },
     keyframes:{
-      appear:{
+      disappear:{
         '0%':{
           opacity:"100%"
         },
@@ -21,10 +21,10 @@ module.exports = {
       },
       disappear:{
         '0%':{
-          opacity:"0"
+          opacity:"100%"
         },
         '100%':{
-          opacity:"100%"
+          opacity:"0"
         }
       },
       showAnswer:{
@@ -272,6 +272,68 @@ module.exports = {
         },
         '100%':{
           marginTop:"0"
+        }
+      },
+      topLine:{
+        '0%':{
+          top:"0.3rem",
+          rotate:"0deg"
+        },
+        '100%':{
+          top:"0.6rem",
+          rotate:"45deg"
+        }
+      },
+      bottomLine:{
+        '0%':{
+          top:"0.9rem",
+          rotate:"0deg"
+        },
+        '100%':{
+          top:"0.35rem",
+          rotate:"-45deg"
+        }
+      },
+      topLineReverse:{
+        '0%':{
+      
+          top:"0.6rem",
+          rotate:"45deg"
+        },
+        '100%':{
+          top:"0.3rem",
+          rotate:"0deg"
+        }
+      },
+      bottomLineReverse:{
+        '0%':{
+        
+          top:"0.35rem",
+          rotate:"-45deg"
+        },
+        '100%':{
+          top:"0.9rem",
+          rotate:"0deg"
+        }
+      },
+      hoverContactBtn:{
+        '0%':{
+        
+          scale:"1"
+        },
+        '100%':{
+          boxShadow:"4px 4px 50px -3px rgba(107,52,255,0.45) ",
+          scale:"1.1"
+        }
+      },
+      reverseHoverContactBtn:{
+        '0%':{
+          boxShadow:"4px 4px 50px -3px rgba(107,52,255,0.45) ",
+          scale:"1.1"
+          
+        },
+        '100%':{
+          scale:"1"
         }
       },
     }

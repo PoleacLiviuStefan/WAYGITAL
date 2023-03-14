@@ -1,11 +1,36 @@
-import React from 'react'
+import React,{useRef,useEffect,useState} from 'react'
 import {AiOutlineInstagram} from 'react-icons/ai'
 import {CiFacebook,CiTwitter} from 'react-icons/ci'
 import underLine from './underLine.svg'
+import emailjs from '@emailjs/browser';
+import {AiFillCheckCircle} from 'react-icons/ai'
+import Fade from 'react-reveal/Fade';
 
 const Contact = ({startAnimate}) => {
+    const [showNotification,setShowNotification] =useState(false);
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_86lsij3', 'template_g07u15h', form.current, 'JBlV6SrZcJJiJKOe2')
+          .then((result) => {
+              setShowNotification(true)
+              console.log("da")
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
+useEffect(()=>{
+    const timer=setTimeout(()=>{
+        if(showNotification)
+        setShowNotification(false)
+    },2000)
+    return ()=>clearInterval(timer);
+},[showNotification])
   return (
-    <div name="Contact" className='relative flex justify-center items-center  w-full h-[90rem] lg:h-[60rem]'>
+    <Fade >
+    <div name="Contact" className='relative flex justify-center items-center  w-full lg:h-screen h-full py-[10rem] lg:py-0'>
+        <div className={`fixed ${!showNotification && "hidden"} z-50 right-[1.5rem] lg:right-[3rem] bottom-[1rem] w-[300px] h-[100px] bg-green-400 rounded-[8px]`}><div className='relative flex justify-center items-center w-[70px] h-[100px] rounded-l-[8px] bg-white text-[48px] text-green-400' ><AiFillCheckCircle /></div> <p className='relative  flex justify-center items-start text-[14px] text-white w-[100px]  top-0  '>Mesajul dumneavoastra a fost trimis ! O sa va contactam cat de curand posibil. Multumim!</p></div>
         <div className='relative flex lg:flex-row flex-col items-center lg:items-start justify-center w-[90%] '>
         <div className='flex flex-col w-[18rem] lg:ml-[8rem] text-white  h-full lg:hidden'>
                 <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] '>HAIDE SA <br/> DISCUTAM   <img className='lg:mt-[-.9rem] w-[13.5rem] lg:w-[27rem]' src={underLine} /></h3>
@@ -25,15 +50,15 @@ const Contact = ({startAnimate}) => {
                         </div>
                     </div>
             </div>
-            <form onSubmit={e=>e.preventDefault} className='flex flex-col justify-between lg:items-start  w-[85%] mt-[3rem] lg:mt-0 lg:w-[30rem] h-[35rem] placeholder-gray-400 text-white'>
+            <form ref={form} onSubmit={sendEmail}  className='flex flex-col justify-between lg:items-start  w-[85%] mt-[3rem] lg:mt-0 lg:w-[30rem] h-[35rem] placeholder-gray-400 text-white'>
                 <div className='flex flex-col  items-start h-[3rem] w-full '>
-                    <input type="text" className='w-full bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Numele Complet' required />
+                    <input name="user_name"  type="text" className='w-full bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Numele Complet' required />
                     
                 </div>
-                <div className='flex flex-col items-start h-[3rem] w-full'>    <input type="email" className='w-full h-[2rem] bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Email' required /></div>
-                <div className='flex flex-col items-start h-[3rem] w-full '>  <input minLength={10} type="text" className='w-full h-[2rem] bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Telefon' required /></div>
-                <div className='flex flex-col items-start h-[5rem] w-full '> <textarea type="text" className='w-full h-full text-ellipsis  bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Spune-ne mai mult despre cum ai vrea sa arate site-ul tau  ' required /></div>
-                <button className='relative  w-full h-[3.5rem] text-[20px] text-[#8C61FF] font-bold border-[2px] bg-transparent border-[#8C61FF] rounded-[16px] shadow-[0px_0px_49px_5px_rgba(140,97,255,0.27)] '>
+                <div className='flex flex-col items-start h-[3rem] w-full'>    <input name="user_email" type="email" className='w-full h-[2rem] bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Email' required /></div>
+                <div className='flex flex-col items-start h-[3rem] w-full '>  <input name="user_telefon" minLength={10} type="text" className='w-full h-[2rem] bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Telefon' required /></div>
+                <div className='flex flex-col items-start h-[5rem] w-full '> <textarea name="message" type="text" className='w-full h-full text-ellipsis  bg-transparent border-b-[1px] outline-none border-white  '  placeholder='Spune-ne mai mult despre cum ai vrea sa arate site-ul tau  ' required /></div>
+                <button value="Send" type='submit' className='relative  w-full h-[3.5rem] text-[20px] text-[#8C61FF] font-bold border-[2px] bg-transparent border-[#8C61FF] rounded-[16px] shadow-[0px_0px_49px_5px_rgba(140,97,255,0.27)] '>
                     Trimite
                 </button>
             </form>
@@ -57,6 +82,7 @@ const Contact = ({startAnimate}) => {
             </div>
         </div>
     </div>
+    </Fade>
   )
 }
 

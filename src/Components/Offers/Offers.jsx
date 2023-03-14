@@ -15,6 +15,7 @@ import messageIcon from './messageIcon.png'
 import messageIconSelected from './messageIconSelected.png'
 
 import { useState } from 'react'
+import Fade from 'react-reveal/Fade';
 
 import {HiChevronRight} from 'react-icons/hi'
 
@@ -23,9 +24,11 @@ const Offers = () => {
   const [totalPrice,setTotalPrice]=useState(0)
   const [optionSections,setOptionSection]=useState(0)
   return (
-    <div className='relative flex justify-center w-full h-full pt-[10rem] lg:py-[15rem]  '>
+    <Fade>
+    <div className='relative flex justify-center w-screen h-full lg:h-screen  lg:py-[25rem]  '>
+
             <div className='relative  items-center  flex lg:flex-row flex-col justify-center lg:justify-between w-[80%] lg:w-[75rem]'>
-            
+
                 <div className='relative w-[300px]  lg:w-[350px] h-[368px] lg:h-[430px] rounded-[16px] bg-white shadow-xl  '>
                     
                 <div className='absolute top-[-3.5rem] right-[-1.5rem] flex justify-center items-center   w-[180px] h-[85px] bg-[#CFD3F0] rounded-[12px]'>
@@ -40,8 +43,14 @@ const Offers = () => {
                           obiect===0 ?
                             "Design complet"
                             :obiect===1 ?
-                            "Dezvoltarea site-iului" :
+                            "Dezvoltarea site-iului" 
+                            :obiect===2 ?
                             "Sistem de inregistrare / logare"
+                            :obiect===3 ?
+                            "Sistem de plati"
+                            :obiect===4 ?
+                            "Optimizare SEO ( 6 luni )"
+                            : "Mesaje directe de pe site"
                           
                         }
                         </li>
@@ -133,6 +142,7 @@ const Offers = () => {
         </div> 
             </div>
     </div>
+    </Fade>
   )
 }
 

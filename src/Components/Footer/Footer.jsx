@@ -11,7 +11,7 @@ const Footer = () => {
   const navigate=useNavigate()
   return (
     <div className='relative flex justify-center  w-full h-full pb-[10rem] pt-[4rem]  bg-[#EBECF8] '>
-       <div className='flex flex-col  lg:flex-row   justify-between mt-[2rem]  w-[10rem] lg:w-[50rem] '>
+       <div className='flex flex-col  lg:flex-row   justify-between mt-[2rem]  w-[10rem] lg:w-[60rem] '>
                 <div className='flex flex-col items-left w-[15rem]'>
                   <h5 className=''>NAVIGHEAZA</h5>
                     <ul className='flex flex-col justify-between mt-[.5rem] h-full text-[14px] text-gray-500'>
@@ -100,7 +100,7 @@ const Footer = () => {
                   <h5 className='flex flex-col items-left mt-[.5rem] text-[14px] text-gray-500 mt-[.5rem]'><span className=' flex '><span className='text-[20px] mr-2'><AiOutlineClockCircle /> </span>PROGRAM :</span> <span className='flex flex-col items-right ml-7'> 8:00 - 22:00 LUNI-VINERI <br /> 8:00 - 19:00 SAMBATA-DUMINICA</span></h5>
                   <h5 className='flex  text-[14px] text-gray-500 mt-[1rem]'><span className='text-[20px] mr-2'><CiLocationOn /> </span> Buzau, Aleea Craitelor nr. 1  </h5>
                 </div>
-                <div className='flex flex-col  w-[15rem] lg:w-[20rem] mt-[4rem] lg:mt-0'>
+                <div className='flex flex-col ml-0 lg:ml-[2rem]  w-[15rem] lg:w-[20rem] mt-[4rem] lg:mt-0'>
                     <a href="https://anpc.ro/ce-este-sal/"> <div className='bg-cover bg-sal w-[185px] h-[50px]' /></a>
                     <a href="https://ec.europa.eu/consumers/odr" ><div className='bg-cover bg-sol w-[185px] h-[50px]' /></a>
                   </div>
