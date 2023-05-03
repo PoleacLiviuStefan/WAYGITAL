@@ -14,7 +14,7 @@ const WelcomeLoading = () => {
                 setShowTextIndex(prev=>prev+1)
                
                     
-            }, 2000);
+            }, 1500);
             const timerAnim = setInterval(() => {
               setActivateAnim(prev=>prev+1)
              
@@ -26,9 +26,9 @@ const WelcomeLoading = () => {
 
   return (
     <div className='absolute flex justify-center items-center bg-[#1A1A1A] w-screen h-screen '>
-            <Fade left><img src={images[showTextIndex]} className={`${showTextIndex!=0 && "hidden"} ${activateAnim===0 && "animate-[disappear_.5s_ease-in-out_forwards]"} w-[300px] lg:w-[900px]`} /></Fade>
-            <Fade right><img src={images[showTextIndex]} className={`${showTextIndex!=1 && "hidden"} ${activateAnim===1 && "animate-[disappear_.5s_ease-in-out_forwards]"} w-[300px] lg:w-[900px]`} /></Fade>
-            <Fade bottom><img src={images[showTextIndex]} className={`${showTextIndex!=2 && "hidden"} ${activateAnim===2 && "animate-[disappear_.5s_ease-in-out_forwards]"} animate-[showAnswerReverse_.5s_ease-in-out_forwards] w-[300px] 2xl:w-[1250px] xl:w-[1000px] lg:w-[700px]`} /></Fade>
+            <Fade left><img src={images[showTextIndex]} alt className={`${showTextIndex!==0 && "hidden"} ${activateAnim===0 && "animate-[disappear_.5s_ease-in-out_forwards]"} w-[300px] lg:w-[900px]`} /></Fade>
+            <Fade right><img src={images[showTextIndex]} alt className={`${showTextIndex!==1 && "hidden"} ${activateAnim===1 && "animate-[disappear_.5s_ease-in-out_forwards]"} w-[300px] lg:w-[900px]`} /></Fade>
+            <Fade bottom><img src={images[showTextIndex]} alt className={`${showTextIndex!==2 && "hidden"} ${activateAnim===2 && "animate-[disappear_.5s_ease-in-out_forwards]"} animate-[showAnswerReverse_.5s_ease-in-out_forwards] w-[300px] 2xl:w-[1250px] xl:w-[1000px] lg:w-[700px]`} /></Fade>
     </div>
   )
 }
