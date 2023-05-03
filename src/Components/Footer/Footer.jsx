@@ -10,7 +10,7 @@ import logo from './logoFullName.png';
 const Footer = () => {
   const navigate=useNavigate()
   return (
-    <div className='relative flex justify-center  w-full h-full pb-[10rem] pt-[4rem]  bg-[#EBECF8] '>
+    <div className='relative flex justify-center  w-full h-full pb-[10rem] pt-[4rem]  bg-gradient-to-b from-[#EBECF8] to-[#BCA8EC] '>
        <div className='flex flex-col  lg:flex-row   justify-between mt-[2rem]  w-[10rem] lg:w-[60rem] '>
                 <div className='flex flex-col items-left w-[15rem]'>
                   <h5 className=''>NAVIGHEAZA</h5>
@@ -95,7 +95,7 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-col  w-[15rem] lg:w-[20rem] mt-[4rem] lg:mt-0'>
                   
-                  <img src={logo} className="w-[300px]" />
+                  <img src={logo} className="w-[300px]" alt="Logo Waygital , creare website" />
                  
                   <h5 className='flex flex-col items-left mt-[.5rem] text-[14px] text-gray-500 mt-[.5rem]'><span className=' flex '><span className='text-[20px] mr-2'><AiOutlineClockCircle /> </span>PROGRAM :</span> <span className='flex flex-col items-right ml-7'> 8:00 - 22:00 LUNI-VINERI <br /> 8:00 - 19:00 SAMBATA-DUMINICA</span></h5>
                   <h5 className='flex  text-[14px] text-gray-500 mt-[1rem]'><span className='text-[20px] mr-2'><CiLocationOn /> </span> Buzau, Aleea Craitelor nr. 1  </h5>

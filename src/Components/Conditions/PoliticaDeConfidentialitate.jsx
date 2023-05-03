@@ -3,7 +3,7 @@ import React from 'react'
 const PoliticaDeConfidentialitate = () => {
   return (
     <div className='flex flex-col items-center   bg-white py-[10rem]'>
-    <div className='w-[50rem]'>
+    <div className='w-[80%] lg:w-[50rem]'>
         <h6 className='text-[28px] font-bold'>Politica de confidențialitate</h6>
           <p className='mt-[1rem]'>
             WAYGITAL VISIONARY SRL garantează securitatea și confidențialitatea datelor găzduite și transmise prin sistemul său informatic. Aceste informații vor putea fi folosite de către WAYGITAL VISIONARY SRL  pentru a trimite utilizatorului confirmarea comenzilor, diverse oferte speciale, promoții, etc. numai în baza consimțământului persoanei vizate.

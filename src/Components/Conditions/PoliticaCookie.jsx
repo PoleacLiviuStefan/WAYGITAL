@@ -3,7 +3,7 @@ import React from 'react'
 const PoliticaCookie = () => {
   return (
     <div className='flex flex-col items-center   bg-white py-[10rem]'>
-    <div className='w-[50rem]'>
+    <div className='w-[80%] lg:w-[50rem]'>
               <h6 className='font-bold text-[28px]'>Politica Cookies</h6>
       <h6 className=' mt-[1rem] font-bold'> 1. Politica de utilizare Cookie-uri </h6>
       <p className='mt-[.5rem]'>

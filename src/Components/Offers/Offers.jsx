@@ -19,17 +19,17 @@ import Fade from 'react-reveal/Fade';
 
 import {HiChevronRight} from 'react-icons/hi'
 
-const Offers = () => {
+const Offers = ({fadeDown}) => {
   const [selectedm,setSelected]=useState([])
   const [totalPrice,setTotalPrice]=useState(0)
   const [optionSections,setOptionSection]=useState(0)
   return (
     <Fade>
-    <div className='relative flex justify-center w-screen h-full lg:h-screen  lg:py-[25rem]  '>
+    <div className='relative flex justify-center w-screen h-full lg:h-screen  lg:py-[30rem] font-montSerrat '>
 
             <div className='relative  items-center  flex lg:flex-row flex-col justify-center lg:justify-between w-[80%] lg:w-[75rem]'>
 
-                <div className='relative w-[300px]  lg:w-[350px] h-[368px] lg:h-[430px] rounded-[16px] bg-white shadow-xl  '>
+                <div className='relative w-[300px]  lg:w-[350px] h-[368px] lg:h-[440px] rounded-[16px] bg-white shadow-xl  '>
                     
                 <div className='absolute top-[-3.5rem] right-[-1.5rem] flex justify-center items-center   w-[180px] h-[85px] bg-[#CFD3F0] rounded-[12px]'>
                     <h3 className='font-extrabold mt-[-1rem] text-[#4E568F]'>OFERTA LIMITATA</h3> </div>
@@ -79,12 +79,12 @@ const Offers = () => {
                     <div onClick={()=>{if(!selectedm.includes(1))
                     {
                         setSelected(oldarray =>[...oldarray,1]) 
-                        setTotalPrice(prev=>prev+=600)
+                        setTotalPrice(prev=>prev+=1000)
                     }
 
                       else 
                     {   setSelected(selectedm.filter(optiune=> optiune!==1))
-                        setTotalPrice(prev=>prev-=600)
+                        setTotalPrice(prev=>prev-=1000)
                     }
                       
                       } } className="w-[220px] h-[215px] lg:h-[306px] my-6">
@@ -138,7 +138,7 @@ const Offers = () => {
                     
                 </div>
                 <div className='h-[15rem] lg:hidden w-full '>
-                <div className='absolute lg:hidden bottom-[15rem] z-20   bg-gradient-to-t from-[#F2F2F7] to-transparent bg-opacity-[50%] h-[10rem] w-full   ' />
+                <div className={`absolute lg:hidden bottom-[15rem] z-20  ${fadeDown && "hidden" } bg-gradient-to-t from-[#F2F2F7] to-transparent bg-opacity-[50%] h-[10rem] w-full  `}/>
         </div> 
             </div>
     </div>

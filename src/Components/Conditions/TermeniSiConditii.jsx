@@ -3,7 +3,7 @@ import React from 'react'
 const TermeniSiConditii = () => {
   return (
     <div className='flex flex-col items-center   bg-white py-[10rem]'>
-      <div className='w-[50rem]'>
+      <div className='w-[80%] lg:w-[50rem]'>
            <h6 className='font-bold text-[28px]'> TERMENI SI CONDITII</h6>
           Adresa oficiala a website-ului nostru:<a href="https://waygital.ro" className='font-bold'> https://waygital.ro </a>.
         <p className=''>

@@ -15,9 +15,9 @@ const Contact = ({startAnimate}) => {
         emailjs.sendForm('service_86lsij3', 'template_g07u15h', form.current, 'JBlV6SrZcJJiJKOe2')
           .then((result) => {
               setShowNotification(true)
-              console.log("da")
+          
           }, (error) => {
-              console.log(error.text);
+            
           });
       };
 useEffect(()=>{
@@ -29,9 +29,9 @@ useEffect(()=>{
 },[showNotification])
   return (
     <Fade >
-    <div name="Contact" className='relative flex justify-center items-center  w-full lg:h-screen h-full py-[10rem] lg:py-0'>
+    <div name="Contact" className='relative flex justify-center items-center  w-full lg:h-screen h-full my-[5rem] py-[10rem] lg:py-[5rem]'>
         <div className={`fixed ${!showNotification && "hidden"} z-50 right-[1.5rem] lg:right-[3rem] bottom-[1rem] w-[300px] h-[100px] bg-green-400 rounded-[8px]`}><div className='relative flex justify-center items-center w-[70px] h-[100px] rounded-l-[8px] bg-white text-[48px] text-green-400' ><AiFillCheckCircle /></div> <p className='relative  flex justify-center items-start text-[14px] text-white w-[100px]  top-0  '>Mesajul dumneavoastra a fost trimis ! O sa va contactam cat de curand posibil. Multumim!</p></div>
-        <div className='relative flex lg:flex-row flex-col items-center lg:items-start justify-center w-[90%] '>
+        <div className='relative flex lg:flex-row flex-col items-center lg:items-start justify-center   w-[90%] '>
         <div className='flex flex-col w-[18rem] lg:ml-[8rem] text-white  h-full lg:hidden'>
                 <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] '>HAIDE SA <br/> DISCUTAM   <img className='lg:mt-[-.9rem] w-[13.5rem] lg:w-[27rem]' src={underLine} /></h3>
                 <p className='w-[18rem] lg:w-[25rem] mt-[3rem] '>Contacteaza-ne oricand si iti raspundem in 
@@ -63,7 +63,7 @@ useEffect(()=>{
                 </button>
             </form>
             <div className='flex flex-col lg:ml-[8rem] text-white  h-full hidden lg:block'>
-                <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] w-[13.5rem] lg:w-[27rem] '>HAIDE SA <br/> DISCUTAM   <img className={`lg:mt-[-.9rem] ${startAnimate && "animate-[slideUnderLine_1s_ease-in-out_forwards]"}`} src={underLine} /></h3>
+                <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] w-[13.5rem] lg:w-[27rem] '>HAIDE SA <br/> DISCUTAM   <img className={`lg:mt-[-.9rem] ${startAnimate && "animate-[slideUnderLine_1s_ease-in-out_forwards]"}`} src={underLine} alt=""/></h3>
                 <p className='w-[18rem] lg:w-[25rem] mt-[3rem] '>Contacteaza-ne oricand si iti raspundem in 
                     maxim 8 ore sau ne poti apela telefonic
                     oricand intre 8:00 - 23:00<br/>

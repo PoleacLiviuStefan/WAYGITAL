@@ -27,11 +27,12 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             to="Despre Noi"
             spy={true}
             smooth={true}
-            offset={-300}
+            offset={-90}
             duration={500}
             href="Despre Noi"
+            className='py-[2.5rem]'
           >
-              <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(0)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 flex ${(hoveredBtn!==0 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >  DESPRE NOI
+              <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(0)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2  flex ${(hoveredBtn!==0 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >  DESPRE NOI
               <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===0 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
             </Link> 
             <Link
@@ -39,11 +40,12 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             to="Servicii"
             spy={true}
             smooth={true}
-            offset={-150}
+            offset={-200}
             duration={500}
             href="Servicii"
+            className='py-[2.5rem]'
           >
-              <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(1)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==1 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >SERVICII <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===1 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"}`} /> </button>
+              <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(1)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==1 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >SERVICII <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===1 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"}`} /> </button>
             </Link>
             <Link
             activeClass="active"
@@ -53,30 +55,33 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             offset={20}
             duration={500}
             href="Portofoliu"
+            className='py-[2.5rem]'
           >
-                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(2)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==2 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] "}`}>PORTOFOLIU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover  h-[2px] ${hoveredBtn ===2 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(2)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==2 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] "}`}>PORTOFOLIU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover  h-[2px] ${hoveredBtn ===2 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
             </Link>
             <Link
             activeClass="active"
             to="Intrebari Frecvente"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={-50}
             duration={500}
             href="Intrebari Frecvente"
+            className='py-[2.5rem]'
           >
-                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(4)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==4 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}> INTREBARI FRECVENTE<span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===4 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(4)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==4 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}> INTREBARI FRECVENTE<span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===4 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
             </Link>
             <Link
             activeClass="active"
             to="Etape De Lucru"
             spy={true}
             smooth={true}
-            offset={-50}
+            offset={50}
             duration={500}
             href="Etape De Lucru"
+            className='py-[2.5rem]'
           >
-                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(3)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==3 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}>ETAPE DE LUCRU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===3 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(3)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==3 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}>ETAPE DE LUCRU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===3 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
             </Link>
           
             <Link
@@ -84,11 +89,12 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             to="Contact"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={-50}
             duration={500}
             href="Contact"
+            className='py-[2.5rem]'
           >
-                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==5 && hoveredBtn!=-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative px-2 ${(hoveredBtn!==5 && hoveredBtn!==-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
             </Link>
                 
              </div>
@@ -107,8 +113,9 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
             offset={-100}
             duration={500}
             href="Hero"
+            className='py-[2.5rem]'
           >
-              <img src={logo} className="relative w-[130px]" />
+              <img src={logo} className="relative w-[130px]" alt="Logo Waygital"/>
           </Link>
              </div>
              <div className='lg:flex hidden  w-[20rem] ml-[2rem] lg:ml-0'>
@@ -141,7 +148,7 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 duration={500}
                 href="Despre Noi"
               >
-                  <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(0)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 flex ${(hoveredBtn!==0 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >  DESPRE NOI
+                  <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(0)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 flex ${(hoveredBtn!==0 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >  DESPRE NOI
                   <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===0 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
                 </Link> 
                 <Link
@@ -154,8 +161,8 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 href="Servicii"
               > 
               <div className='flex'>
-                  <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(1)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==1 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >SERVICII <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===1 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"}`} /> </button>
-                  <div className='flex justify-center items-center ml-4 rounded-[8px] bg-gray-100 shadow-md text-[12px] font-thin  w-[6rem]  '>
+                  <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(1)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==1 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards]"}`} >SERVICII <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===1 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"}`} /> </button>
+                  <div className='flex justify-center items-center ml-4 rounded-[8px] bg-gray-100 shadow-md text-[12px] font-thin  w-[7rem]  '>
                     Oferta Speciala
                   </div>
               </div>
@@ -169,7 +176,7 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 duration={500}
                 href="Portofoliu"
               >
-                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(2)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==2 && hoveredBtn!=-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] "}`}>PORTOFOLIU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover  h-[2px] ${hoveredBtn ===2 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(2)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==2 && hoveredBtn!==-1)  ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] "}`}>PORTOFOLIU <span className={`absolute left-0 bottom-0 bg-underLine bg-cover  h-[2px] ${hoveredBtn ===2 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
                 </Link>
                 <Link
                 activeClass="active"
@@ -203,10 +210,10 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                 duration={500}
                 href="Contact"
               >
-                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==5 && hoveredBtn!=-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] hover:"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
+                    <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==5 && hoveredBtn!==-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] hover:"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
                 </Link>
                 <a href='tel:+40-753-616-640' className='flex px-2 text-[14px]'><span className='text-[15px] mr-2'><BsPhone /></span>Telefon : <span className='hover:animate-[phoneAnim_.3s_ease-in-out_forwards]'>0753616640</span></a>
-                <a className='flex px-2 '><span className='text-[15px] mr-2'><AiOutlineMail /></span>E-mail: info@waygital.ro</a>
+                <a className='flex px-2 text-[14px]'><span className='text-[15px] mr-2'><AiOutlineMail /></span>E-mail: info@waygital.ro</a>
             </div>
         </div>
     </nav>

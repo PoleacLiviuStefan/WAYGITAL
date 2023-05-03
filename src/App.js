@@ -11,7 +11,7 @@ import Services from "./Components/Services/Services";
 import Steps from "./Components/Steps/Steps";
 import WhyUs from "./Components/WhyUs/WhyUs";
 import { useState,useEffect,useRef } from "react";
-import { motion, useScroll,useTransform } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 import WelcomeLoading from "./Components/Loading/WelcomeLoading";
 
 import { Route, Routes } from "react-router-dom"
@@ -19,6 +19,7 @@ import { useLocation } from 'react-router-dom'
 import PoliticaDeConfidentialitate from "./Components/Conditions/PoliticaDeConfidentialitate";
 import PoliticaCookie from "./Components/Conditions/PoliticaCookie";
 import TermeniSiConditii from "./Components/Conditions/TermeniSiConditii";
+import 'atropos/css'
 
 function App() {
   const [scrollValue, setScrollValue] = useState(0);
@@ -27,25 +28,26 @@ function App() {
   const [sliderFirstColorMobile,setSliderFirstColorMobile] = useState("white");
   const [sliderSecondColorMobile,setSliderSecondColorMobile] = useState("white");
   const [showLoadingScreen,setShowLoadingScreen]=useState(true);
-  const windowHeight = useRef(window.innerHeight);
-  let maxY = window.scrollMaxY;
   const { scrollYProgress } = useScroll();
   const [scrollPercentage,setScrollPercentage]=useState(0)
   const location = useLocation();
-
+  const [fadeDown,setFadeDown]=useState(false);
   useEffect(() => {
-    console.log(scrollYProgress.current)
+
     const onScroll = (e) => {
       setScrollValue(e.target.documentElement.scrollTop);
 
-      
+      if(scrollYProgress.current<0.20 && scrollYProgress.current>0.32)
+        setFadeDown(true)
+      else
+      setFadeDown(false)
      
-      if(scrollYProgress.current>=0.33 && scrollYProgress.current<=0.43 ||  scrollYProgress.current>=0.72 && scrollYProgress.current<=0.83)
+      if(scrollYProgress.current>=0.23 && scrollYProgress.current<=0.32 ||  scrollYProgress.current>=0.56 && scrollYProgress.current<=0.86)
         setSliderFirstColor("black")
         else
           
           setSliderFirstColor("white")
-      if((scrollYProgress.current>=0.28 && scrollYProgress.current<=0.46 ||  scrollYProgress.current>=0.62 && scrollYProgress.current<=0.76 || scrollYProgress.current>0.96 ))
+      if((scrollYProgress.current>=0.20 && scrollYProgress.current<=0.36 ||  scrollYProgress.current>=0.56 && scrollYProgress.current<=0.8 || scrollYProgress.current>0.96 ))
        setSliderFirstColorMobile("black")
       else
         
@@ -59,12 +61,12 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoadingScreen(false)
-    }, 6000);
+    }, 4500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={` ${showLoadingScreen && "w-screen h-screen "} ${ (scrollYProgress.current>=0.28 && scrollYProgress.current<=0.46 ||  scrollYProgress.current>=0.62 && scrollYProgress.current<=0.76 ) ? "animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}  ${ (scrollYProgress.current>=0.33 && scrollYProgress.current<=0.43 ||  scrollYProgress.current>=0.72 && scrollYProgress.current<=0.83 ) ? "lg:animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"lg:animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}`}>
+    <div className={` ${showLoadingScreen && "w-screen h-screen "} ${ (scrollYProgress.current>=0.20 && scrollYProgress.current<=0.36 ||  scrollYProgress.current>=0.54 && scrollYProgress.current<=0.8 ) ? "animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}  ${ (scrollYProgress.current>=0.23 && scrollYProgress.current<=0.32 ||  scrollYProgress.current>=0.56 && scrollYProgress.current<=0.86 ) ? "lg:animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"lg:animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}`}>
        {
        showLoadingScreen
        ? <WelcomeLoading />
@@ -79,7 +81,7 @@ function App() {
                 <WhyUs  />
                 <Services />
             
-                <Offers />
+                <Offers fadeDown={fadeDown}/>
                 <Portofoliu />
                 <Faq />     
                 <Steps />

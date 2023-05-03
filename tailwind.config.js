@@ -4,6 +4,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        'oldStandard': 'Old Standard TT, serif',
+        'roboto': 'Roboto, sans-serif',
+        'robotoMono':"Roboto Mono, monospace",
+        'montSerrat':"Montserrat, sans-serif",
+        'libre':"Libre Baskerville, serif",
+        'garamond': "EB Garamond, serif",
+        'fastHand': "Fasthand, cursive",
+        'cursive':"Cookie, cursive",
+        'dafoe': "Mr Dafoe, cursive",
+        'norican' : "Norican, cursive",
+        'oswald' : "Oswald, sans-serif",
+        'merriweather' : "Merriweather Sans, sans-serif",
+        'jakarta': "Plus Jakarta Sans, sans-serif",
+        'kanit' : "Kanit, sans-serif"
+      },
       backgroundImage:{
         'underLine': "url('/public/Images/underLine.svg')",
         'sol':"url('/public/Images/SOL.svg')",
@@ -11,6 +27,14 @@ module.exports = {
       }
     },
     keyframes:{
+      appear:{
+        '0%':{
+          opacity:"0"
+        },
+        '100%':{
+          opacity:"100%"
+        }
+      },
       disappear:{
         '0%':{
           opacity:"100%"
@@ -19,8 +43,11 @@ module.exports = {
           opacity:"0"
         }
       },
-      disappear:{
+      appearDissappear:{
         '0%':{
+          opacity:"0"
+        },
+        '50%':{
           opacity:"100%"
         },
         '100%':{
@@ -37,26 +64,26 @@ module.exports = {
       },
       showAnswerReverse:{
         '0%':{
-          height:"14rem"
+          height:"15rem"
         },
         '100%':{
-          height:"4.5rem"
+          height:"4rem"
         }
       },
       showAnswerMobile:{
         '0%':{
-          height:"3.5rem"
+          height:"3.3rem"
         },
         '100%':{
-          height:"14rem"
+          height:"13rem"
         }
       },
       showAnswerMobileReverse:{
         '0%':{
-          height:"14rem"
+          height:"13rem"
         },
         '100%':{
-          height:"3.5rem"
+          height:"3.3rem"
         }
       },
       rotateArrow:{
@@ -330,6 +357,24 @@ module.exports = {
         '0%':{
           boxShadow:"4px 4px 50px -3px rgba(107,52,255,0.45) ",
           scale:"1.1"
+          
+        },
+        '100%':{
+          scale:"1"
+        }
+      },
+      StepCrossed:{
+        '0%':{
+         scale:"1"
+          
+        },
+        '100%':{
+          scale:"1.1"
+        }
+      },
+      StepCrossedReverse:{
+        '0%':{
+         scale:"1.1"
           
         },
         '100%':{
