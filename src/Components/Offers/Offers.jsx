@@ -32,9 +32,9 @@ const Offers = ({fadeDown}) => {
                 <div className='relative w-[300px]  lg:w-[350px] h-[368px] lg:h-[440px] rounded-[16px] bg-white shadow-xl  '>
                     
                 <div className='absolute top-[-3.5rem] right-[-1.5rem] flex justify-center items-center   w-[180px] h-[85px] bg-[#CFD3F0] rounded-[12px]'>
-                    <h3 className='font-extrabold mt-[-1rem] text-[#4E568F]'>OFERTA LIMITATA</h3> </div>
+                    <h2 className='font-extrabold mt-[-1rem] text-[#4E568F]'>OFERTA LIMITATA</h2> </div>
                    <div className='bg-white flex flex-col items-center absolute  top-0 left-0 w-full h-full ' >
-                    <h3 className='font-extrabold text-black text-[22px] lg:text-[28px] py-[.5rem] lg:py-[1.5rem]'> Pret <span className='font-outline-black-1 text-transparent'>Estimat</span></h3>
+                    <h2 className='font-extrabold text-black text-[18px] lg:text-[28px] py-[.5rem] lg:py-[1.5rem] text-center'> Pret Estimat pentru crearea site-ului </h2>
                     <h3 className='top-2 text-[26px] lg:text-[34px] font-bold'>{totalPrice} RON</h3>
                     <ul className='relative  flex flex-col items-left w-[90%] oveflow-hidden'>
                       {selectedm.map((obiect)=>{

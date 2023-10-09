@@ -1,25 +1,24 @@
 import React, { useRef } from 'react'
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import underLine from './underLine.svg'
+import { useNavigate,useLocation } from 'react-router-dom';
 import { motion, useScroll,useTransform } from "framer-motion"
 import logo from './logoText.png'
 import {BsPhone} from 'react-icons/bs'
 import {AiOutlineMail} from 'react-icons/ai'
 
 const Navbar = ({sliderPercentage,showNavbar}) => {
-  const targetRef= useRef();
+
   const [hoveredBtn,setHoveredBtn] = useState(-1)
   const { scrollYProgress } = useScroll();
   const [showMobileMenu,setShowMobileMenu]=useState(false)
   const navigate=useNavigate(); 
-
+  const located=useLocation();
 
   const scaleWidth=useTransform(scrollYProgress,[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1],[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1])
 
   return (
-    <nav className={`${showNavbar ? "fixed animate-[slideNavbar_.5s_ease-in-out_forwards]":"absolute"} z-50 flex justify-center  left-0 text-[#5C5C5C]  bg-white h-[4rem] lg:h-[6rem] w-full `}>
+    <nav className={`${located.pathname==="/personal-CV" && "hidden"} ${showNavbar ? "fixed animate-[slideNavbar_.5s_ease-in-out_forwards]":"absolute"}  z-50 flex justify-center  left-0 text-[#5C5C5C]  bg-white h-[4rem] lg:h-[4.5rem] w-full `}>
         <div className='flex justify-between items-center h-full w-[80%]'>
             <div className='w-[50rem] hidden lg:flex text-[14px] items-center  justify-between'>
             <Link
@@ -213,7 +212,7 @@ const Navbar = ({sliderPercentage,showNavbar}) => {
                     <button onClick={()=>navigate("/")} onMouseEnter={()=>setHoveredBtn(5)} onMouseLeave={()=>setHoveredBtn(-1)} className={`relative  px-2 ${(hoveredBtn!==5 && hoveredBtn!==-1) ? "animate-[unselectedBtn_.3s_ease-in-out_forwards]" : "animate-[unselectedBtnReverse_.3s_ease-in-out_forwards] hover:"}`}>CONTACT <span className={`absolute left-0 bottom-0 bg-underLine bg-cover w-full h-[2px] ${hoveredBtn ===5 ? "animate-[slideUnderLine_.3s_ease-in-out_forwards]":"hidden"} `} /></button>
                 </Link>
                 <a href='tel:+40-753-616-640' className='flex px-2 text-[14px]'><span className='text-[15px] mr-2'><BsPhone /></span>Telefon : <span className='hover:animate-[phoneAnim_.3s_ease-in-out_forwards]'>0753616640</span></a>
-                <a className='flex px-2 text-[14px]'><span className='text-[15px] mr-2'><AiOutlineMail /></span>E-mail: info@waygital.ro</a>
+                <a className='flex px-2 text-[14px]' href="mailto:stefan.liviu286@gmail.com"><span className='text-[15px] mr-2'><AiOutlineMail /></span>E-mail: info@waygital.ro</a>
             </div>
         </div>
     </nav>

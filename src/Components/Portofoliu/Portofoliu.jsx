@@ -9,6 +9,7 @@ import scoalaDeSoferiDesktop from './Images/scoalaDeSoferi.webp'
 import scoalaDeSoferiPhone from './Images/scoalaDeSoferiPhone.webp'
 import lorenaLashStudioDesktop from './Images/LorenaLashStudio.webp'
 import lorenaLashStudioPhone from './Images/LorenaLashStudioPhone.webp'
+ 
 import Fade from 'react-reveal/Fade';
 
 import { useState,useEffect } from 'react'
@@ -16,7 +17,7 @@ const Portofoliu = () => {
   const [siteIndex,setSiteIndex]=useState(0)
   const desktopImg=[bidhouseDesktop,motoDesktop,adinaDeskotp,scoalaDeSoferiDesktop,lorenaLashStudioDesktop]
   const phoneImg=[bidhousePhone,motoPhone,adinaPhone,scoalaDeSoferiPhone,lorenaLashStudioPhone]
-  const sitesLink=["https://www.bidhouseplatform.com/","https://4motoforrent.ro/","https://adinahirsch.ro/","https://scoaladesoferi-diculescuciprian.ro/","https://lorenalash.ro/"]
+  const sitesLink=["https://bidhousesite.netlify.app/","https://4motoforrent.ro/","https://adinahirsch.ro/","https://scoaladesoferi-diculescuciprian.ro/","https://lorenalash.ro/"]
   useEffect(() => {
     const interval = setTimeout(() => {
  

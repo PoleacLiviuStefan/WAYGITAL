@@ -63,7 +63,7 @@ useEffect(()=>{
                 </button>
             </form>
             <div className='flex flex-col lg:ml-[8rem] text-white  h-full hidden lg:block'>
-                <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] w-[13.5rem] lg:w-[27rem] '>HAIDE SA <br/> DISCUTAM   <img className={`lg:mt-[-.9rem] ${startAnimate && "animate-[slideUnderLine_1s_ease-in-out_forwards]"}`} src={underLine} alt=""/></h3>
+                <h3 className='font-bold text-[42px]  lg:text-[82px] text-white leading-[32px] lg:leading-[80px] w-[13.5rem] lg:w-[27rem] '>HAIDE SA <br/> DISCUTAM   <img className={`lg:mt-[-.9rem] ${startAnimate && "animate-[slideUnderLine_1s_ease-in-out_forwards]"}`} src={underLine} alt/></h3>
                 <p className='w-[18rem] lg:w-[25rem] mt-[3rem] '>Contacteaza-ne oricand si iti raspundem in 
                     maxim 8 ore sau ne poti apela telefonic
                     oricand intre 8:00 - 23:00<br/>

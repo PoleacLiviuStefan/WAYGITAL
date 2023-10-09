@@ -3,6 +3,7 @@ import Faq from "./Components/FAQ/Faq";
 import Footer from "./Components/Footer/Footer";
 import Hero from "./Components/Hero/Hero";
 import LeftSlider from "./Components/LeftSlider/LeftSlider";
+
 import MiniInfo from "./Components/MiniInfo/MiniInfo";
 import Navbar from "./Components/Navbar/Navbar";
 import Offers from "./Components/Offers/Offers";
@@ -20,17 +21,22 @@ import PoliticaDeConfidentialitate from "./Components/Conditions/PoliticaDeConfi
 import PoliticaCookie from "./Components/Conditions/PoliticaCookie";
 import TermeniSiConditii from "./Components/Conditions/TermeniSiConditii";
 import 'atropos/css'
+import PersonalCv from "./Components/PersonalCV/PersonalCv";
+import AiPresentation from "./Components/AiPresentation/AiPresentation";
+
+
 
 function App() {
+  const location = useLocation();
   const [scrollValue, setScrollValue] = useState(0);
   const [sliderFirstColor,setSliderFirstColor] = useState("white");
   const [sliderSecondColor,setSliderSecondColor] = useState("white");
   const [sliderFirstColorMobile,setSliderFirstColorMobile] = useState("white");
   const [sliderSecondColorMobile,setSliderSecondColorMobile] = useState("white");
-  const [showLoadingScreen,setShowLoadingScreen]=useState(true);
+  const [showLoadingScreen,setShowLoadingScreen]=useState(location.pathname!=="/personal-CV" ? true : false);
   const { scrollYProgress } = useScroll();
   const [scrollPercentage,setScrollPercentage]=useState(0)
-  const location = useLocation();
+ 
   const [fadeDown,setFadeDown]=useState(false);
   useEffect(() => {
 
@@ -65,8 +71,30 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+
+  useEffect(()=>{ 
+    const script = document.createElement('script');
+    script.src = 'https://cdn.botpress.cloud/webchat/v0/inject.js';
+    script.async = true;
+    script.onLoad = () =>{
+      window.botpressWebChat.init({
+        "composerPlaceholder": "Chat with bot",
+        "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+        "botId": "2af8672e-1ffd-41fa-82f5-ab5c4df7d48e",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "2af8672e-1ffd-41fa-82f5-ab5c4df7d48e"
+    });
+    }
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  },[])
+
   return (
-    <div className={` ${showLoadingScreen && "w-screen h-screen "} ${ (scrollYProgress.current>=0.20 && scrollYProgress.current<=0.36 ||  scrollYProgress.current>=0.54 && scrollYProgress.current<=0.8 ) ? "animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}  ${ (scrollYProgress.current>=0.23 && scrollYProgress.current<=0.32 ||  scrollYProgress.current>=0.56 && scrollYProgress.current<=0.86 ) ? "lg:animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"lg:animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}`}>
+    <div className={` ${showLoadingScreen && "w-screen h-screen "} ${ (scrollYProgress.current>=0.20 && scrollYProgress.current<=0.36 ||  scrollYProgress.current>=0.54 && scrollYProgress.current<=0.8 ) ? "animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}  ${ (scrollYProgress.current>=0.23 && scrollYProgress.current<=0.23 ||  scrollYProgress.current>=0.56 && scrollYProgress.current<=0.86 ) ? "lg:animate-[animateBackgroundWhite_.3s_ease-in-out_forwards]" :"lg:animate-[animateBackgroundBlack_.3s_ease-in-out_forwards]"}`}>
        {
        showLoadingScreen
        ? <WelcomeLoading />
@@ -76,11 +104,12 @@ function App() {
         
           <Routes>
             <Route path="/" element={<>
+            
               <main>
                 <Hero />
                 <WhyUs  />
                 <Services />
-            
+                <AiPresentation />
                 <Offers fadeDown={fadeDown}/>
                 <Portofoliu />
                 <Faq />     
@@ -91,10 +120,12 @@ function App() {
           <Route path="/politica-de-confidentialitate" element={<PoliticaDeConfidentialitate />}  />
           <Route path="/politica-cookie" element={<PoliticaCookie />}  />
           <Route path="/termeni-si-conditii" element={<TermeniSiConditii />}  />
+          <Route path="/personal-CV" element={<PersonalCv />}  />
           </Routes>
         
         <Footer />
         </>
+        
 }
     </div>
   );

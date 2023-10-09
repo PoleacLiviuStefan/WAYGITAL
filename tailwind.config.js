@@ -27,6 +27,14 @@ module.exports = {
       }
     },
     keyframes:{
+      infiniteSlider:{
+        '0%':{
+          marginLeft:"0"
+        },
+        '100%':{
+          marginLeft:"-101%"
+        }
+      },
       appear:{
         '0%':{
           opacity:"0"
@@ -379,6 +387,25 @@ module.exports = {
         },
         '100%':{
           scale:"1"
+        }
+      },
+      StepCrossedReverse:{
+        '0%':{
+         scale:"1.1"
+          
+        },
+        '100%':{
+          scale:"1"
+        }
+      },
+      mouseTouchDown:{
+        '0%':{
+         top:"0",
+        opacity:"100%"
+        },
+        '100%':{
+          top:"2.5rem",
+          opacity:"30%"
         }
       },
     }
