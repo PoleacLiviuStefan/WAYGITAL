@@ -408,6 +408,55 @@ module.exports = {
           opacity:"30%"
         }
       },
+       clickIconsTutorial: {
+        '0%' : {
+          opacity:"0%",
+          top:"0",
+          right:"0",
+
+        },
+        '10%':{
+          opacity:"100%",
+          right:"0",
+          top:"0"
+        },
+        '30%':{
+          right:'13rem',
+          opacity:"100%"
+        },
+        '40%':{
+          right:"13rem",
+          opacity:"100%"
+        },
+        '45%':{
+          opacity:"0%"
+        },
+        '50%' : {
+          opacity:"0%",
+          top:"0",
+          right:"0",
+
+        },
+        '60%':{
+          opacity:"100%",
+          right:"0",
+          top:"0"
+        },
+        '80%':{
+          right:'10rem'
+        },
+        '90%':{
+          right:"10rem"
+        },
+        '95%':{
+          opacity:"0%"
+        },
+        '100%':{
+          right:'0'
+        }
+
+      },
+
     }
   },
   plugins: [],

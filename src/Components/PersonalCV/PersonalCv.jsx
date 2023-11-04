@@ -73,7 +73,7 @@ const PersonalCv = () => {
       </div>
       <div className="relative flex flex-col items-center w-full lg:w-[65rem] py-[15rem] ">
         <div className="relative flex flex-col w-[90%] lg:w-full">
-          <div className="relative flex items-center justify-end ">
+          <div name="Contact" className="relative flex items-center justify-end ">
             <div className="absolute top-0 lg:top-[7rem] lg:left-[3rem] flex flex-col w-[90%] lg:w-[30rem]">
               <h2 className="  font-extrabold text-[32px] lg:text-[64px] leading-[1.8rem] lg:leading-[3.5rem]">
                 POLEAC <br /> LIVIU-STEFAN
@@ -84,16 +84,16 @@ const PersonalCv = () => {
               <p>Hey, welcome to my personal website!</p>
               <p>You can check out my portofolio and my experience.</p>
               <p className="mt-4 text-[14px] ">Click on the next icons to get redirected </p>
-              <div className="mt-1 flex text-[36px] gap-4">  <a className="cursor-pointer" href="www.linkedin.com/in/poleac-liviu-stefan" target="_blank"><AiOutlineLinkedin /> </a> <a className="cursor-pointer" href="https://github.com/PoleacLiviuStefan" target="_blank"><AiFillGithub /> </a>
+              <div className="relative mt-1 flex text-[36px] gap-4 w-[15rem]">  <a className="cursor-pointer" href="www.linkedin.com/in/poleac-liviu-stefan" target="_blank"><AiOutlineLinkedin /> </a> <a className="cursor-pointer" href="https://github.com/PoleacLiviuStefan" target="_blank"><AiFillGithub /> </a>
               <a className="cursor-pointer rotate-90" href='tel:+40-753-616-640'><AiFillPhone /> </a>  
+              <span className="absolute animate-[clickIconsTutorial_15s_ease-in-out_infinite] text-[28px] font-bold text-purple-400"><BsMouse /></span>
                </div> 
             </div>
-            <div>
+            
             <img
               src={meImg}
-              className="mt-[10rem] lg:mt-0 w-[700px] shadow-xl"
+              className="mt-[15rem] lg:mt-0 w-[700px] shadow-xl"
             />
-            </div>
           </div>
         </div>
         <div className="relative mt-[4rem] flex flex-col items-center text-[20px] w-[1.2rem] h-[4rem] border-[1px] border-white rounded-[20px] py-[.2rem] opacity-[70%]">
@@ -129,13 +129,23 @@ const PersonalCv = () => {
               backend, Tailwind CSS, Stripe API, Framer Motion and many more
               React libraries
             </p>
-            <button className="flex items-center mt-[1rem] text-[14px] border-[1px] border-white px-[2.5rem] py-[.7rem]  trasition ease-in-out hover:border-purple-400 hover:text-purple-400 duration-300">
-              {" "}
+            <Link
+            activeClass="active"
+            to="Contact"
+            spy={true}
+            smooth={true}
+            offset={-90}
+            duration={500}
+            href="Contact"
+            className='flex items-center mt-[1rem] text-[14px] border-[1px] border-white px-[2.5rem] py-[.7rem]  trasition ease-in-out hover:border-purple-400 hover:text-purple-400 duration-300'
+          >
+           
               CONTACT ME NOW{" "}
               <span className="ml-2 text-[20px]">
                 <AiOutlineArrowRight />
               </span>
-            </button>
+             
+            </Link>
           </div>
           <div className="flex flex-col mt-[1rem] lg:mt-0 lg:ml-[4rem]">
             <h4 className="font-bold text-[24px]">Technologies used:</h4>
